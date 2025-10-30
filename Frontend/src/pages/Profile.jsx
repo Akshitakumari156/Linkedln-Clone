@@ -1,8 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
-import dotenv from "dotenv";
-dotenv.config();
 export default function Profile() {
   const [posts, setPosts] = useState([]);
   const [editMode, setEditMode] = useState(null);

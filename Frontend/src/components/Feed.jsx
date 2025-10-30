@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CreatePost from "./CreatePost";
-import dotenv from "dotenv";
-dotenv.config();
 const Feed = () => {
   const [posts, setPosts] = useState([]);
     const backendUrl = import.meta.env.VITE_BACKEND_LINK;

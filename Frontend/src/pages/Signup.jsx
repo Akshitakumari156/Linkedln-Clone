@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import dotenv from "dotenv";
-dotenv.config();
 export default function Signup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
-import dotenv from "dotenv";
-dotenv.config();
 
 const CreatePost = ({ onPostCreated }) => {
   const [text, setText] = useState("");
