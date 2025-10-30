@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CreatePost from "./CreatePost";
-
+import dotenv from "dotenv";
+dotenv.config();
 const Feed = () => {
   const [posts, setPosts] = useState([]);
 
   const fetchPosts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/posts");
+      const res = await axios.get(`${process.env.Backend_link}/api/posts`);
       setPosts(res.data);
     } catch (err) {
       console.error("Error fetching posts:", err);
@@ -28,7 +29,7 @@ const Feed = () => {
             <p className="text-gray-700 mb-2">{post.text}</p>
             {post.image && (
               <img
-                src={`http://localhost:5000${post.image}`}
+                src={`${process.env.Backend_link}${post.image}`}
                 alt="Post"
                 className="rounded-lg max-h-96 object-cover"
               />

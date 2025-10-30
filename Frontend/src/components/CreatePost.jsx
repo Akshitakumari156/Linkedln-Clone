@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
+import dotenv from "dotenv";
+dotenv.config();
 
 const CreatePost = ({ onPostCreated }) => {
   const [text, setText] = useState("");
@@ -21,7 +23,7 @@ const CreatePost = ({ onPostCreated }) => {
     console.log("📦 FormData userId:", user?._id);
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:5000/api/posts/create", formData, {
+      const res = await axios.post(`${process.env.Backend_link}/api/posts/create`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

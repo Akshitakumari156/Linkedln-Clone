@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
-
+import dotenv from "dotenv";
+dotenv.config();
 export default function Profile() {
   const [posts, setPosts] = useState([]);
   const [editMode, setEditMode] = useState(null);
@@ -19,7 +20,7 @@ export default function Profile() {
     }
 
     axios
-      .get(`http://localhost:5000/api/posts/${userId}`)
+      .get(`${process.env.Backend_link}/api/posts/${userId}`)
       .then((res) => {
         console.log("✅ Posts fetched:", res.data);
         setPosts(res.data);
@@ -37,7 +38,7 @@ export default function Profile() {
       if (editFile) formData.append("image", editFile);
 
       const res = await axios.put(
-        `http://localhost:5000/api/posts/update/${id}`,
+        `${process.env.Backend_link}/api/posts/update/${id}`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -56,7 +57,7 @@ export default function Profile() {
   // ✅ Delete post
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/posts/delete/${id}`);
+      await axios.delete(`${process.env.Backend_link}/api/posts/delete/${id}`);
       setPosts(posts.filter((p) => p._id !== id));
     } catch (error) {
       console.error("❌ Error deleting post:", error);

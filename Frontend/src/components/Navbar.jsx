@@ -1,5 +1,6 @@
 import { useAuth } from "../context/AuthContext";
 import Logo from "../assets/linkedln.png";
+
 export default function Navbar() {
   const { user } = useAuth(); 
 
