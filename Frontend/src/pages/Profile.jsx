@@ -11,7 +11,7 @@ export default function Profile() {
   const { user } = useAuth(); // ✅ Logged-in user
 
   const userId = user?._id;
-
+  const backendUrl = import.meta.env.VITE_BACKEND_LINK;
   // ✅ Fetch all posts for this user
   useEffect(() => {
     if (!userId) {
@@ -20,7 +20,7 @@ export default function Profile() {
     }
 
     axios
-      .get(`${process.env.Backend_link}/api/posts/${userId}`)
+      .get(`${backendUrl}/api/posts/${userId}`)
       .then((res) => {
         console.log("✅ Posts fetched:", res.data);
         setPosts(res.data);
@@ -38,7 +38,7 @@ export default function Profile() {
       if (editFile) formData.append("image", editFile);
 
       const res = await axios.put(
-        `${process.env.Backend_link}/api/posts/update/${id}`,
+        `${backendUrl}/api/posts/update/${id}`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -57,7 +57,7 @@ export default function Profile() {
   // ✅ Delete post
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${process.env.Backend_link}/api/posts/delete/${id}`);
+      await axios.delete(`${backendUrl}/api/posts/delete/${id}`);
       setPosts(posts.filter((p) => p._id !== id));
     } catch (error) {
       console.error("❌ Error deleting post:", error);
@@ -109,7 +109,7 @@ export default function Profile() {
                     />
                     {post.image && (
                       <img
-                        src={`http://localhost:5000${post.image}`}
+                        src={`${backendUrl}${post.image}`}
                         alt="Post"
                         className="rounded-lg mt-2 max-h-60"
                       />
@@ -137,7 +137,7 @@ export default function Profile() {
                   <p>{post.text}</p>
                   {post.image && (
                     <img
-                      src={`http://localhost:5000${post.image}`}
+                      src={`${backendUrl}${post.image}`}
                       alt="Post"
                       className="rounded-lg mt-2 max-h-60"
                     />

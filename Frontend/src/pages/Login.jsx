@@ -11,9 +11,10 @@ export default function Login() {
   const { login } = useAuth();
   const handleLogin = async (e) => {
     e.preventDefault();
+   const backendUrl = import.meta.env.VITE_BACKEND_LINK;
 
     try {
-      const res = await axios.post(`${process.env.Backend_link}/auth/login`, {
+      const res = await axios.post(`${backendUrl}/auth/login`, {
         email,
         password,
       });

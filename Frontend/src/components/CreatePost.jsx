@@ -9,7 +9,7 @@ const CreatePost = ({ onPostCreated }) => {
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
   const { user } = useAuth(); // ✅ get logged-in user
-
+  const backendUrl = import.meta.env.VITE_BACKEND_LINK;
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!text && !image) return alert("Write something or upload an image!");
@@ -23,7 +23,7 @@ const CreatePost = ({ onPostCreated }) => {
     console.log("📦 FormData userId:", user?._id);
     try {
       setLoading(true);
-      const res = await axios.post(`${process.env.Backend_link}/api/posts/create`, formData, {
+      const res = await axios.post(`${backendUrl}/api/posts/create`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

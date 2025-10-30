@@ -5,10 +5,10 @@ import dotenv from "dotenv";
 dotenv.config();
 const Feed = () => {
   const [posts, setPosts] = useState([]);
-
+    const backendUrl = import.meta.env.VITE_BACKEND_LINK;
   const fetchPosts = async () => {
     try {
-      const res = await axios.get(`${process.env.Backend_link}/api/posts`);
+      const res = await axios.get(`${backendUrl}/api/posts`);
       setPosts(res.data);
     } catch (err) {
       console.error("Error fetching posts:", err);
@@ -29,7 +29,7 @@ const Feed = () => {
             <p className="text-gray-700 mb-2">{post.text}</p>
             {post.image && (
               <img
-                src={`${process.env.Backend_link}${post.image}`}
+                src={`${backendUrl}${post.image}`}
                 alt="Post"
                 className="rounded-lg max-h-96 object-cover"
               />
