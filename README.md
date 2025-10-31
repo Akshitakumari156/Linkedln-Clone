@@ -44,9 +44,35 @@ The backend of this project is live and can be accessed here:
 
 ---
 ## ⚙️ How to Run the Project
+---
 
-### 🖥️ 1. Clone the Repository
 ```bash
 git clone https://github.com/your-username/linkedin-profile-clone.git
 cd linkedin-profile-clone
 
+### . Install Dependencies
+
+### 🧩 Backend
+```bash
+cd backend
+npm install
+
+###💻 Frontend
+cd ../frontend
+npm install
+3. Set Up Environment Variables
+
+Create a .env file in the backend folder and add the following lines:
+
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+
+▶️ 4. Run Locally
+🚀 Start Backend
+cd backend
+npm start
+
+🌐 Start Frontend
+cd ../frontend
+npm run dev
