@@ -4,7 +4,7 @@ This project is a **LinkedIn-style profile page** built using the MERN (MongoDB,
 It allows users to create, view, and delete posts, as well as display their personal profile information such as profile image, name, and email.
 
 ---
-## 🌐 Deployed Backend
+## 🌐 Deployed
 
 The backend of this project is live and can be accessed here:  
 👉 [https://linkedln-clone-neon.vercel.app/](https://linkedln-clone-neon.vercel.app/)
