@@ -21,7 +21,7 @@ const CreatePost = ({ onPostCreated }) => {
     console.log("📦 FormData userId:", user?._id);
     try {
       setLoading(true);
-      const res = await axios.post('https://linkedln-clone-ecdr.onrender.com/api/posts/create', formData, {
+      const res = await axios.post('https://linkedln-clone-3.onrender.com/api/posts/create', formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

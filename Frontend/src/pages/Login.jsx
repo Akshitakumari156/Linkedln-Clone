@@ -10,7 +10,7 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://linkedln-clone-ecdr.onrender.com/auth/login', {
+      const res = await axios.post('https://linkedln-clone-3.onrender.com/auth/login', {
         email,
         password,
       });

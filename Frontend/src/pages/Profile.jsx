@@ -18,7 +18,7 @@ export default function Profile() {
     }
 
     axios
-      .get(`https://linkedln-clone-ecdr.onrender.com/api/posts/${userId}`)
+      .get(`https://linkedln-clone-3.onrender.com/api/posts/${userId}`)
       .then((res) => {
         console.log("✅ Posts fetched:", res.data);
         setPosts(res.data);
@@ -36,7 +36,7 @@ export default function Profile() {
       if (editFile) formData.append("image", editFile);
 
       const res = await axios.put(
-        `https://linkedln-clone-ecdr.onrender.com/api/posts/update/${id}`,
+        `https://linkedln-clone-3.onrender.com/api/posts/update/${id}`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -55,7 +55,7 @@ export default function Profile() {
   // ✅ Delete post
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://linkedln-clone-ecdr.onrender.com/api/posts/delete/${id}`);
+      await axios.delete(`https://linkedln-clone-3.onrender.com/api/posts/delete/${id}`);
       setPosts(posts.filter((p) => p._id !== id));
     } catch (error) {
       console.error("❌ Error deleting post:", error);

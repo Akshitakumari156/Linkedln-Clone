@@ -6,7 +6,7 @@ const Feed = () => {
     // const backendUrl = import.meta.env.VITE_BACKEND_LINK;
   const fetchPosts = async () => {
     try {
-      const res = await axios.get('https://linkedln-clone-ecdr.onrender.com/api/posts');
+      const res = await axios.get('https://linkedln-clone-3.onrender.com/api/posts');
       setPosts(res.data);
     } catch (err) {
       console.error("Error fetching posts:", err);
