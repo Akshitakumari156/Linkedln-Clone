@@ -9,8 +9,6 @@ export default function Profile() {
   const { user } = useAuth(); // ✅ Logged-in user
 
   const userId = user?._id;
-//   const backendUrl = import.meta.env.VITE_BACKEND_LINK;
-  // ✅ Fetch all posts for this user
   useEffect(() => {
     if (!userId) {
       console.log("⚠️ userId is missing, user object:", user);
@@ -107,7 +105,7 @@ export default function Profile() {
                     />
                     {post.image && (
                       <img
-                        src={`${backendUrl}${post.image}`}
+                        src={`https://linkedln-clone-3.onrender.com${post.image}`}
                         alt="Post"
                         className="rounded-lg mt-2 max-h-60"
                       />
@@ -135,7 +133,7 @@ export default function Profile() {
                   <p>{post.text}</p>
                   {post.image && (
                     <img
-                      src={`${backendUrl}${post.image}`}
+                      src={`https://linkedln-clone-3.onrender.com${post.image}`}
                       alt="Post"
                       className="rounded-lg mt-2 max-h-60"
                     />

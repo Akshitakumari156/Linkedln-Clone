@@ -6,7 +6,7 @@ const PublicRoute = ({ children }) => {
   if (user) {
     return <Navigate to="/home" replace />;
   }
-  return children; // allow login/signup if not logged in
+  return children; 
 };
 
 export default PublicRoute;

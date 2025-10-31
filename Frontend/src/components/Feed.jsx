@@ -3,7 +3,6 @@ import axios from "axios";
 import CreatePost from "./CreatePost";
 const Feed = () => {
   const [posts, setPosts] = useState([]);
-    // const backendUrl = import.meta.env.VITE_BACKEND_LINK;
   const fetchPosts = async () => {
     try {
       const res = await axios.get('https://linkedln-clone-3.onrender.com/api/posts');
@@ -27,7 +26,7 @@ const Feed = () => {
             <p className="text-gray-700 mb-2">{post.text}</p>
             {post.image && (
               <img
-                src={`${backendUrl}${post.image}`}
+                src={`https://linkedln-clone-3.onrender.com${post.image}`}
                 alt="Post"
                 className="rounded-lg max-h-96 object-cover"
               />
