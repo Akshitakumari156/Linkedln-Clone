@@ -14,7 +14,6 @@ The backend of this project is live and can be accessed here:
 
 ✅ **User Profile Section**
 - Displays user profile picture, name, and email ID.  
-- Profile image upload supported using `multer`.
 
 ✅ **Create Posts**
 - Users can create posts with text and optional images.  
