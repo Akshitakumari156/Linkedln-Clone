@@ -26,9 +26,6 @@ The backend of this project is live and can be accessed here:
 ✅ **Delete Posts**
 - Users can delete their own posts instantly.  
 
-✅ **Image Upload Support**
-- Upload and preview images before posting using `multer` and `FormData`.
-
 ---
 
 ## 🛠️ Tech Stack
