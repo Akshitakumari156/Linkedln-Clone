@@ -9,10 +9,8 @@ export default function Login() {
   const { login } = useAuth();
   const handleLogin = async (e) => {
     e.preventDefault();
-   const backendUrl = import.meta.env.VITE_BACKEND_LINK;
-
     try {
-      const res = await axios.post(`${backendUrl}/auth/login`, {
+      const res = await axios.post('https://linkedln-clone-ecdr.onrender.com/auth/login', {
         email,
         password,
       });

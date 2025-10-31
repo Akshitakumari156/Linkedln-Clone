@@ -3,10 +3,10 @@ import axios from "axios";
 import CreatePost from "./CreatePost";
 const Feed = () => {
   const [posts, setPosts] = useState([]);
-    const backendUrl = import.meta.env.VITE_BACKEND_LINK;
+    // const backendUrl = import.meta.env.VITE_BACKEND_LINK;
   const fetchPosts = async () => {
     try {
-      const res = await axios.get(`${backendUrl}/api/posts`);
+      const res = await axios.get('https://linkedln-clone-ecdr.onrender.com/api/posts');
       setPosts(res.data);
     } catch (err) {
       console.error("Error fetching posts:", err);

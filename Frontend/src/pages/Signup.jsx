@@ -11,7 +11,7 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${process.env.Backend_link}/auth/signup`, {
+      const res = await axios.post(`https://linkedln-clone-ecdr.onrender.com/auth/signup`, {
         name,
         email,
         password,
